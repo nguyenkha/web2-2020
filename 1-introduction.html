@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Bài giảng 1 - Giới thiệu môn học</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/atom-one-light.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<script>
+			(adsbygoogle = window.adsbygoogle || []).push({
+				google_ad_client: "ca-pub-1460132164768330",
+				enable_page_level_ads: true
+			});
+
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Lập trình Web 2</h1>
+					<h3>Bài giảng 1 - Giới thiệu môn học</h3>
+					<p>
+						<small>Giảng viên: <a href="mailto:dnkha@fit.hcmus.edu.vn">Đỗ Nguyên Kha</a></small><br>
+						<small>Học kỳ 2/2018-2019 @ FIT-HCMUS</small>
+					</p>
+					<p><small><a href="?print-pdf">[Bản in]</a></small></p>
+				</section>
+				<section>
+					<h3>Nội dung</h3>
+					<ol>
+						<li>Mục tiêu môn học</li>
+						<li>Đánh giá, thang điểm</li>
+						<li>Công cụ</li>
+						<li>Bài tập</li>
+					</ol>
+				</section>
+				<section>
+					<h3>Mục tiêu môn học</h3>
+					<ul>
+						<li>Ôn tập kiến thức cơ bản về Web</li>
+						<li>Lập trình Web động với Node.js</li>
+						<li>Lưu trữ dữ liệu và truy vấn với PostgreSQL</li>
+						<li>MVC, Single-page Application</li>
+						<li>Triển khai hệ thống với Docker và Heroku</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Đánh giá, thang điểm</h3>
+					<ul>
+						<li>Đồ án theo nhóm 4 sinh viên theo danh sách đăng ký gửi lớp trưởng. Chốt danh sách buổi thứ ba.</li>
+						<li>Thang điểm: <strong>10</strong></li>
+						<ul>
+							<li>Bài tập tuần lý thuyết/thực hành: <strong>2</strong></li>
+							<li>Thi thực hành giữa kỳ: <strong>3</strong></li>
+							<li>Đồ án cuối kỳ, <em>chấm vấn đáp</em>: <strong>5</strong></li>
+							<li>Điểm cộng (seminar): tối đa <strong>1</strong></li>
+						</ul>
+						<li>Thi lại thực hành trên máy tính: <strong>5</strong></li>
+					<ul>
+				</section>
+				<section>
+					<h3>Cài đặt công cụ</h3>
+					<ul>
+						<li><a href="https://nodejs.org/">Node.js</a></li>
+						<li><a href="https://git-scm.com/">git</a></li>
+						<li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+						<li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+						<li><a href="https://tableplus.io/">TablePlus</a></li>
+						<li><a href="https://www.docker.com/">Docker</a></li>
+						<li><a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku CLI</a></li>
+						<li>Đăng ký tài khoản <a href="https://github.com/">github</a>, <a href="https://heroku.com/">Heroku</a></li>
+					<ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				slideNumber: 'c/t',
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+						hljs.configure({
+							tabReplace: '  ', // 2 spaces
+						})
+						hljs.initHighlightingOnLoad(); 
+					} }
+				]
+			});
+		</script>
+		<script>
+			(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-53247198-1', 'auto');
+			ga('send', 'pageview');
+
+		</script>
+	</body>
+</html>
