@@ -4,13 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Lập trình Web 2 - 2019</title>
+		<title>Bài giảng 2 - Node.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/atom-one-light.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -34,16 +34,34 @@
 			<div class="slides">
 				<section>
 					<h1>Lập trình Web 2</h1>
-					<h3>Danh sách bài giảng</h3>
+					<h3>Bài giảng 2 - Node.js</h3>
 					<p>
 						<small>Giảng viên: <a href="mailto:dnkha@fit.hcmus.edu.vn">Đỗ Nguyên Kha</a></small><br>
 						<small>Học kỳ 2/2018-2019 @ FIT-HCMUS</small>
 					</p>
-					<ul>
-						<li><a href="1-introduction.html">Bài giảng 1 - Giới thiệu môn học</a></li>
-						<li><a href="2-node-js.html">Bài giảng 2 - Node.js</a></li>
-					</ul>
+					<p><small><a href="?print-pdf">[Bản in]</a></small></p>
 				</section>
+				<section>
+					<h3>Nội dung</h3>
+					<ol>
+						<li>Hello World</li>
+						<li>Module</li>
+						<li>npm/yarn</li>
+						<li>HTTP Web Server</li>
+						<li>Heroku</li>
+						<li>Bài tập</li>
+					</ol>
+        </section>
+        <section>
+          <h3>Bài tập về nhà - BTCN02</h3>
+          <ul>
+            <li>Tạo tập tin trang Web bằng Node.js cá nhân: Họ tên, năm sinh, email cá nhân, hình ảnh đại diện..., danh sách các môn học, thời gian, địa điểm học trong học kỳ</li>
+            <li>Liên kết ít nhất 10 bạn trong lớp: Hiển thị tên, liên kết đến giới thiệu cá nhân trên host</li>
+            <li>Nộp link trang Web trên Herokutrong tập tin url.txt và nguồn</li>
+            <li>Nộp bài trên Web môn học trước <strong>05/03/2019 09:00PM</strong></li>
+            <li>Tên file: <strong>MSSV-xx.zip/rar</strong>, xx là điểm tự đánh giá từ 01-10. Ví dụ: 1515151-07.zip</li>
+          </ul>
+        </section>
 			</div>
 		</div>
 
@@ -55,11 +73,24 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				slideNumber: 'c/t',
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+						hljs.configure({
+							tabReplace: '  ', // 2 spaces
+						})
+						hljs.initHighlightingOnLoad(); 
+					} }
 				]
 			});
 		</script>
