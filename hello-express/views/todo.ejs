@@ -1,0 +1,36 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TODO</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <h1>TODO</h1>
+    <ul>
+      <% for (let i = 0; i < todos.length; i++) { %>
+        <% const todo = todos[i] %>
+        <% if (todo.done) { %>
+          <li><strike><%= todo.note %></strike></li>
+        <% } else { %>
+          <li>
+            <%= todo.note %>
+            <form action="/todo/<%= i %>" method="POST">
+              <button type="submit" class="btn btn-primary">Làm xong!</button>
+            </form>
+          </li>
+        <% } %>
+      <% } %>
+    </ul>
+    <form method="POST">
+      <div class="form-group">
+        <label for="n1">Việc cần làm</label>
+        <input type="text" class="form-control" id="note" name="note" placeholder="Việc cần làm">
+      </div>
+      <button type="submit" class="btn btn-primary">Thêm</button>
+    </form>
+  </div>
+</body>
+</html>
