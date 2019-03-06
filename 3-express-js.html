@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Bài giảng 2 - Node.js</title>
+		<title>Bài giảng 3 - Express.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/white.css">
@@ -34,7 +34,7 @@
 			<div class="slides">
 				<section>
 					<h1>Lập trình Web 2</h1>
-					<h3>Bài giảng 2 - Node.js</h3>
+					<h3>Bài giảng 3 - Express.js</h3>
 					<p>
 						<small>Giảng viên: <a href="mailto:dnkha@fit.hcmus.edu.vn">Đỗ Nguyên Kha</a></small><br>
 						<small>Học kỳ 2/2018-2019 @ FIT-HCMUS</small>
@@ -44,21 +44,87 @@
 				<section>
 					<h3>Nội dung</h3>
 					<ol>
-						<li>Hello World</li>
-						<li>Module</li>
-						<li>npm/yarn</li>
-						<li>HTTP Web Server</li>
-						<li>Heroku</li>
+						<li>Routing</li>
+						<li>Template</li>
+						<li>Middleware</li>
+						<li>Cấu trúc ứng dụng</li>
+						<li>Xử lý lỗi</li>
 						<li>Bài tập</li>
 					</ol>
-        </section>
+				</section>
+				<section>
+					<h3>Seminar</h3>
+					<ul>
+						<li>Điểm cộng tối đa 1 điểm</li>
+						<li>Tìm hiểu về các node.js framework: MEAN, Meteor, Sail, Nest, Loopback (API)...</li>
+						<li>Làm theo nhóm</li>
+						<li>Trình bày ngày 27/03/2019</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Đăng ký nhóm</h3>
+					<ul>
+						<li>Đủ 4 thành viên, các nhóm chưa đủ sẽ được ghép lại ngẫu nhiên</li>
+						<li>Cung cấp tài khoản github chính xác</li>
+						<li>Link đăng ký: <a href="https://goo.gl/forms/MOvq0qFR7j6A5ktj2">https://goo.gl/forms/MOvq0qFR7j6A5ktj2</a></li>
+					</ul>
+				</section>
+				<section>
+					<h3>Sử dụng</h3>
+					<pre><code data-trim>
+						npm install --save express
+						# hoặc
+						yarn add express
+					</code></pre>
+					<pre><code data-trim>
+						const express = require('express');
+						const app = express();
+						const port = 3000;
+
+						app.get('/', (req, res) => res.send('Hello World!'));
+
+						app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+					</code></pre>
+				</section>
+				<section>
+					<h3>Routing</h3>
+					<pre><code data-trim>
+						app.get();
+						app.post();
+						app.delete();
+						app.put();
+					</code></pre>
+				</section>
+				<section>
+					<h3>Template</h3>
+					<pre><code data-trim>
+						npm install pug --save
+						# hoặc
+						npm install ejs --save
+					</code></pre>
+
+					<pre><code data-trim>
+						app.set('views', './views');
+
+						app.set('view engine', 'pug');
+						// hoặc
+						app.set('view engine', 'ejs');
+					</code></pre>
+				</section>
+				<section>
+					<h3>Middleware</h3>
+					<pre><code data-trim>
+						app.use(handler);
+						app.use('/path', handler);
+					</code></pre>
+				</section>
         <section>
-          <h3>Bài tập về nhà - BTCN02</h3>
+          <h3>Bài tập về nhà - BTCN03</h3>
           <ul>
-            <li>Tạo tập tin trang Web bằng Node.js cá nhân: Họ tên, năm sinh, email cá nhân, hình ảnh đại diện..., danh sách các môn học, thời gian, địa điểm học trong học kỳ</li>
-            <li>Liên kết ít nhất 10 bạn trong lớp: Hiển thị tên, liên kết đến giới thiệu cá nhân trên host</li>
-						<li>Nộp link trang Web trên Heroku trong tập tin url.txt và mã nguồn</li>
-            <li>Nộp bài trên Web môn học trước <strong>05/03/2019 09:00PM</strong></li>
+            <li>Xây dựng trang Web lưu những việc cần làm (TODO app)</li>
+            <li>Lưu TODO trong file JSON</li>
+            <li>Nộp link trang Web trên Heroku trong tập tin url.txt và mã nguồn</li>
+            <li>Nộp bài trên Web môn học trước <strong>12/03/2019 09:00PM</strong></li>
             <li>Tên file: <strong>MSSV-xx.zip/rar</strong>, xx là điểm tự đánh giá từ 01-10. Ví dụ: 1515151-07.zip</li>
           </ul>
         </section>
