@@ -112,10 +112,23 @@
 					</code></pre>
 				</section>
 				<section>
-					<h3>Middleware</h3>
+					<h3>Session (với Redis)</h3>
 					<pre><code data-trim>
-						app.use(handler);
-						app.use('/path', handler);
+						npm install express-session
+						# hoặc cookie session
+						npm install cookie-session
+
+						npm install connect-redis
+					</code></pre>
+					<pre><code data-trim>
+						const session = require('express-session');
+						const RedisStore = require('connect-redis')(session);
+
+						app.use(session({
+							store: new RedisStore(options),
+							secret: 'keyboard cat',
+							resave: false
+						}));
 					</code></pre>
 				</section>
         <section>
@@ -127,7 +140,85 @@
             <li>Nộp bài trên Web môn học trước <strong>12/03/2019 09:00PM</strong></li>
             <li>Tên file: <strong>MSSV-xx.zip/rar</strong>, xx là điểm tự đánh giá từ 01-10. Ví dụ: 1515151-07.zip</li>
           </ul>
-        </section>
+				</section>
+				<section>
+					<h3>Middleware</h3>
+					<pre><code data-trim>
+						function handler(req, res, next) {
+
+						}
+
+						app.use(handler);
+						app.use('/path', handler);
+					</code></pre>
+				</section>
+				<section>
+					<h3>Promise/Async/Await</h3>
+					<pre><code data-trim>
+						# hàm async trả về Promise
+						async function doSomething() {
+							const result = await doSomethingElse();
+							return result.foo;
+						}
+					</code></pre>
+				</section>
+				<section>
+					<h3>Router</h3>
+					<pre><code data-trim>
+						const express = require('express');
+						const router = express.Router();
+
+						router.get('/', function (req, res) {
+							res.send('Birds home page');
+						});
+					</code></pre>
+				</section>
+				<section>
+					<h3>Promise Router</h3>
+					<pre><code data-trim>
+						npm install express-promise-router
+					</code></pre>
+					<pre><code data-trim>
+						const Router = require('express-promise-router');
+						const router = Router();
+
+						router.get('/', async function (req, res) {
+							const data = await getSomethingFromDatabase();
+							res.render('page', data);
+						});
+					</code></pre>
+				</section>
+				<section>
+					<h3>Xử lý lỗi</h3>
+					<pre><code data-trim>
+						app.use(function (err, req, res, next) {
+							console.error(err.stack)
+							res.status(500).send('Something broke!')
+						});
+					</code></pre>
+				</section>
+				<section>
+					<h3>Upload file</h3>
+					<pre><code data-trim>
+						npm install --save multer
+					</code></pre>
+					<pre><code data-trim>
+						const multer  = require('multer');
+						const upload = multer({ dest: 'uploads/' });
+
+						app.post('/profile', upload.single('avatar'), function (req, res, next) {
+							// req.file is the `avatar` file
+							// req.body will hold the text fields, if there were any
+						});
+					</code></pre>
+				</section>
+				<section>
+					<h3>Database</h3>
+					<pre><code data-trim>
+						npm install sequelize
+						npm install --save pg pg-hstore
+					</code></pre>
+				</section>
 			</div>
 		</div>
 
