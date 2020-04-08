@@ -1,7 +1,7 @@
-# Lập trình Web 2 - 2019 (Node.js)
+# Lập trình Web 2 - 2020 (Node.js)
 
 * Giảng viên: Đỗ Nguyên Kha (<dnkha@fit.hcmus.edu.vn>)
 
-* Thời gian: Thứ tư, 07:00AM - 09:00AM 
+* Thời gian: Thứ tư, 09:30AM - 11:30AM 
 
 * Địa điểm: C33
