@@ -37,7 +37,7 @@
 					<h3>Bài giảng 3 - Express.js</h3>
 					<p>
 						<small>Giảng viên: <a href="mailto:dnkha@fit.hcmus.edu.vn">Đỗ Nguyên Kha</a></small><br>
-						<small>Học kỳ 2/2018-2019 @ FIT-HCMUS</small>
+						<small>Học kỳ 2/2019-2020 @ FIT-HCMUS</small>
 					</p>
 					<p><small><a href="?print-pdf">[Bản in]</a></small></p>
 				</section>
@@ -53,33 +53,22 @@
 					</ol>
 				</section>
 				<section>
-					<h3>Seminar</h3>
-					<ul>
-						<li>Điểm cộng tối đa 1 điểm</li>
-						<li>Tìm hiểu về các node.js framework: MEAN, Meteor, Sail, Nest, Loopback (API)...</li>
-						<li>Làm theo nhóm</li>
-						<li>Trình bày ngày 27/03/2019</li>
-					</ul>
-				</section>
-				<section>
 					<h3>Đăng ký nhóm</h3>
 					<ul>
-						<li>Đủ 4 thành viên, các nhóm chưa đủ sẽ được ghép lại ngẫu nhiên</li>
+						<li>Đủ 4 thành viên</li>
 						<li>Cung cấp tài khoản github chính xác</li>
-						<li>Link đăng ký: <a href="https://goo.gl/forms/MOvq0qFR7j6A5ktj2">https://goo.gl/forms/MOvq0qFR7j6A5ktj2</a></li>
+						<li>Link đăng ký: <a href="https://forms.gle/T4FTGUkQeXMJuGBH9">https://forms.gle/T4FTGUkQeXMJuGBH9</a></li>
 					</ul>
 				</section>
 				<section>
 					<h3>Sử dụng</h3>
 					<pre><code data-trim>
 						npm install --save express
-						# hoặc
-						yarn add express
 					</code></pre>
 					<pre><code data-trim>
 						const express = require('express');
 						const app = express();
-						const port = 3000;
+						const port = process.env.PORT || s3000;
 
 						app.get('/', (req, res) => res.send('Hello World!'));
 
@@ -93,6 +82,12 @@
 						app.post();
 						app.delete();
 						app.put();
+					</code></pre>
+				</section>
+				<section>
+					<h3>Static</h3>
+					<pre><code data-trim>
+						app.use(express.static('public'))
 					</code></pre>
 				</section>
 				<section>
@@ -112,32 +107,37 @@
 					</code></pre>
 				</section>
 				<section>
-					<h3>Session (với Redis)</h3>
+					<h3>Body Parser (dùng form)</h3>
 					<pre><code data-trim>
-						npm install express-session
-						# hoặc cookie session
-						npm install cookie-session
-
-						npm install connect-redis
+						npm install body-parser --save
 					</code></pre>
 					<pre><code data-trim>
-						const session = require('express-session');
-						const RedisStore = require('connect-redis')(session);
-
-						app.use(session({
-							store: new RedisStore(options),
-							secret: 'keyboard cat',
-							resave: false
-						}));
+						const bodyParser = require('body-parser');
+						app.use(bodyParser.urlencoded({ extended: false }));
 					</code></pre>
 				</section>
-        <section>
-          <h3>Bài tập về nhà - BTCN03</h3>
+				<section>
+					<h3>Bài tập về nhà - BTCN03</h3>
+					<ul>
+						<li>Xây dựng trang web tính tổng hai số, có sử dụng bootstrap</li>
+						<li>Nộp link trang Web trên Heroku trong tập tin url.txt và mã nguồn</li>
+						<li>Nộp bài trên Web môn học trước <strong>28/04/2019 09:00PM</strong></li>
+						<li>Tên file: <strong>MSSV-xx.zip/rar</strong>, xx là điểm tự đánh giá từ 01-10. Ví dụ: 1515151-07.zip</li>
+					</ul>
+				</section>
+				<!-- <section>
+					<h3>Session (dùng cookie)</h3>
+					<pre><code data-trim>
+						npm install cookie-session --save
+					</code></pre>
+				</section>
+				<section>
+          <h3>Bài tập về nhà - BTCN04</h3>
           <ul>
             <li>Xây dựng trang Web lưu những việc cần làm (TODO app) sau khi đăng nhập với username là MSSV của bạn và mật khẩu là <strong>kocopass</strong></li>
             <li>Lưu TODO trong session</li>
             <li>Nộp link trang Web trên Heroku trong tập tin url.txt và mã nguồn</li>
-            <li>Nộp bài trên Web môn học trước <strong>12/03/2019 09:00PM</strong></li>
+            <li>Nộp bài trên Web môn học trước <strong>28/04/2019 09:00PM</strong></li>
             <li>Tên file: <strong>MSSV-xx.zip/rar</strong>, xx là điểm tự đánh giá từ 01-10. Ví dụ: 1515151-07.zip</li>
           </ul>
 				</section>
@@ -218,7 +218,7 @@
 						npm install sequelize
 						npm install --save pg pg-hstore
 					</code></pre>
-				</section>
+				</section> -->
 			</div>
 		</div>
 
