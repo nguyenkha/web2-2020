@@ -4,13 +4,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Lập trình Web 2 - 2020</title>
+		<title>Bài giảng 3 - Express.js</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/white.css">
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/atom-one-light.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -34,19 +34,39 @@
 			<div class="slides">
 				<section>
 					<h1>Lập trình Web 2</h1>
-					<h3>Danh sách bài giảng</h3>
+					<h3>Bài giảng 7 - Đăng nhập bằng Facebook</h3>
 					<p>
 						<small>Giảng viên: <a href="mailto:dnkha@fit.hcmus.edu.vn">Đỗ Nguyên Kha</a></small><br>
 						<small>Học kỳ 2/2019-2020 @ FIT-HCMUS</small>
 					</p>
+					<p><small><a href="?print-pdf">[Bản in]</a></small></p>
+				</section>
+				<section>
+					<h3>Đăng nhập bằng Facebook</h3>
+					<ol>
+						<li>Passport</li>
+						<li>Facebook Application</li>
+						<li>Đăng nhập bằng Facebook</li>
+					</ol>
+				</section>
+				<section>
+					<h3>Bài tập về nhà - BTCN08</h3>
 					<ul>
-						<li><a href="1-introduction.html">Bài giảng 1 - Giới thiệu môn học</a></li>
-						<li><a href="2-node-js.html">Bài giảng 2 - Node.js</a></li>
-						<li><a href="3-express-js.html">Bài giảng 3 - Express.js</a></li>
-						<li><a href="4-database.html">Bài giảng 4 - Database</a></li>
-						<li><a href="5-email.html">Bài giảng 5 - Email</a></li>
-						<li><a href="6-external-data.html">Bài giảng 6 - External Data</a></li>
-						<li><a href="7-login-facebook.html">Bài giảng 7 - Đăng nhập bằng Facebook</a></li>
+						<li>Làm lại BTCN06 với chức năng đăng nhập bằng tài khoản Facebook</li>
+						<li>Dữ liệu lưu trữ trong <strong>Postgres</strong></li>
+						<li>Nộp link trang Web trên Heroku trong tập tin url.txt và mã nguồn</li>
+						<li>Nộp bài trên Web môn học trước <strong>04/06/2020 09:00PM</strong></li>
+						<li>Tên file: <strong>MSSV-xx.zip/rar</strong>, xx là điểm tự đánh giá từ 01-10. Ví dụ: 1515151-07.zip</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Bài tập nhóm - BTN01</h3>
+					<ul>
+						<li>Làm theo nhóm đồ án</li>
+						<li>Tìm hiểu các web framework cho Node.js</li>
+						<li>Yêu cầu: Báo cáo Word/PDF và slide trình bày PowerPoint</li>
+						<li>Nộp bài trên Web môn học trước <strong>09/06/2020 09:00PM</strong></li>
+						<li>Tên file: <strong>MSSV1-MSSV2-MSSV3-MSSV4-xx.zip/rar</strong>, xx là điểm tự đánh giá từ 01-10.</li>
 					</ul>
 				</section>
 			</div>
@@ -60,11 +80,24 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+
+				slideNumber: 'c/t',
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { 
+						hljs.configure({
+							tabReplace: '  ', // 2 spaces
+						})
+						hljs.initHighlightingOnLoad(); 
+					} }
 				]
 			});
 		</script>
